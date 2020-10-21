@@ -1,14 +1,14 @@
 #include <string>
-#include "Empregado.hpp"
+#include "Vendedor.hpp"
 
-class Vendedor : public Empregado {
+namespace Funcionario{ 
 
-  public:
-    std::string nome;  	  
-	
-	double quotaTotalAnual() {
-	  return quotaMensalVendas * 12;
-	}
-	
-};
-
+  Vendedor::Vendedor(std::string nome,double salarioHora, double quotaMensalVendas){
+    this->nome = nome;
+    this->salarioHora = salarioHora;
+    this->quotaMensalVendas = quotaMensalVendas;
+  }
+	double Vendedor::quotaTotalAnual() {
+	  return quotaMensalVendas * TOTAL_MESES;
+  }
+}
